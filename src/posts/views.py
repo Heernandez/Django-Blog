@@ -38,7 +38,30 @@ def post_create(request):
         form.save()
         return HttpResponseRedirect('/posts')
     context ={
-        "form":form
+        "form":form,
+        "form_type": "Create"
     }
 
     return render(request,"post_create.html",context)
+
+def post_update(request,post_id):
+    try:
+        post_id = int(post_id)
+    except:
+        return render(request,"ERROR.html")
+
+    try:
+        post = Post.objects.get(id = int(post_id))
+    except: 
+        post = Post()
+        post.id = 0
+    form = PostForm(request.POST or None,instance = post)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/posts')
+    context = {
+        "form" : form,
+        "form_type": "Update"
+    }
+    return render(request,"post_create.html",context)
+     

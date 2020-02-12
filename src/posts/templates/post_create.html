@@ -1,8 +1,8 @@
-<h1>YOURE CREATING A NEW BLOG ENTRANCE</h1>
+<h1>Welcome to the post {{form_type}} page</h1>
 
 <form method = 'POST' action = ".">
     {%  csrf_token  %}
     {{form.as_p}}
-    <button type = 'submit' >Create post</button>
+    <button type = 'submit' >{{form_type}} post </button>
 
 </form>

@@ -1,14 +1,15 @@
 <html>
 
-<head> Post List</head>
+<head> <title> Post List</title></head>
 <body>
 <h1>EY {{name}} WELCOME TO THE POST LIST PAGE</h1>
    
     <ul>
     {% for post in post_list %}
-        <li>{{post.id}}   {{post}}</li>
+        <li><a href =" {% url 'posts' %}">     {{post.id}}{{post}} </a> </li>
     {% endfor %}
 
 </ul>
+<a href =" {% url 'new' %}">   Create New Blog  </a> 
 </body>
 </html>
