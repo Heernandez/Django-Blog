@@ -1,2 +1,2 @@
 # Django-Blog
-It¿s a blog developed using python and django framework
+Its a sample personal web page using python and django framework
